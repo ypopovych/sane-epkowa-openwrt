@@ -4,9 +4,9 @@ PKG_NAME:=sane-epkowa
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=http://172.16.1.174:3333/epkowa.git
-PKG_SOURCE_VERSION:=48b6ecd
-PKG_SOURCE_DATE:=2021-09-14
+PKG_SOURCE_URL:=https://github.com/ypopovych/sane-epkowa.git
+PKG_SOURCE_VERSION:=1e37efe
+PKG_SOURCE_DATE:=2021-09-15
 PKG_VERSION:=$(PKG_SOURCE_DATE)-$(PKG_SOURCE_VERSION)
 
 PKG_MAINTAINER:=Yehor Popovych <popovych.yegor@gmail.com>
