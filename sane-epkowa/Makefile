@@ -5,7 +5,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=http://172.16.1.174:3333/epkowa.git
-PKG_SOURCE_VERSION:=9ef4764
+PKG_SOURCE_VERSION:=d1d2d24
 PKG_SOURCE_DATE:=2021-09-14
 PKG_VERSION:=$(PKG_SOURCE_DATE)-$(PKG_SOURCE_VERSION)
 
@@ -33,18 +33,19 @@ define Package/sane-epkowa/description
 endef
 
 define Package/sane-epkowa/conffiles
+	/etc/sane.d/dll.d/epkowa
 	/etc/sane.d/epkowa.conf
 endef
 
 define Package/sane-epkowa/install 
 	$(INSTALL_DIR) $(1)/usr/lib/sane/epkowa
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/libsane-epkowa.so $(1)/usr/lib/sane/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/usr/lib/sane/*.so $(1)/usr/lib/sane/
 	$(INSTALL_DIR) $(1)/usr/share/sane/epkowa/device
-	$(CP) $(SOURCE)/data/device/* $(1)/usr/share/sane/epkowa/device/
-	$(CP) $(SOURCE)/data/*.usbid $(1)/usr/share/sane/
+	$(CP) $(PKG_BUILD_DIR)/usr/share/sane/epkowa/device/* $(1)/usr/share/sane/epkowa/device/
+	$(CP) $(PKG_BUILD_DIR)/usr/share/sane/*.usbid $(1)/usr/share/sane/
 	$(INSTALL_DIR) $(1)/etc/sane.d/dll.d
-	$(CP) $(SOURCE)/data/epkowa.conf $(1)/etc/sane.d/
-	$(CP) $(SOURCE)/data/dll.conf $(1)/etc/dll.d/epkowa
+	$(CP) $(PKG_BUILD_DIR)/etc/sane.d/*.conf $(1)/etc/sane.d/
+	$(CP) $(PKG_BUILD_DIR)/etc/sane.d/dll.d/* $(1)/etc/sane.d/dll.d/
 endef
 
 $(eval $(call BuildPackage,sane-epkowa))
