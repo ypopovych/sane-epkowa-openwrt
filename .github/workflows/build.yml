@@ -44,4 +44,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: sane-epkowa_${{ env.PKG_FULL_VERSION }}_${{ matrix.target }}.ipk
-          path: /home/build/openwrt/bin/packages/${{ matrix.target }}/sane-epkowa/sane-epkowa_${{ env.PKG_FULL_VERSION }}_${{ matrix.target }}.ipk
+          path: /home/build/openwrt/bin/packages/${{ matrix.target }}/epkowa/sane-epkowa_${{ env.PKG_FULL_VERSION }}_${{ matrix.target }}.ipk

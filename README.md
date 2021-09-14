@@ -1,4 +1,4 @@
-![GITHUB-BADGE](https://github.com/tbaela/sane-epkowa-openwrt/workflows/Build/badge.svg)
+![GITHUB-BADGE](https://github.com/ypopovych/sane-epkowa-openwrt/actions/workflows/build.yml/badge.svg)
 # Epson Epkowa SANE backend for OpenWRT
 This repository contains OpenWRT package for the Epson Epkowa Backend project at https://github.com/ypopovych/sane-epkowa
 ## Usage
