@@ -5,7 +5,7 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=http://172.16.1.174:3333/epkowa.git
-PKG_SOURCE_VERSION:=ac51d41
+PKG_SOURCE_VERSION:=48a3c34
 PKG_SOURCE_DATE:=2021-09-14
 PKG_VERSION:=$(PKG_SOURCE_DATE)-$(PKG_SOURCE_VERSION)
 
@@ -25,7 +25,7 @@ define Package/sane-epkowa
   URL:=https://github.com/ypopovych/sane-epkowa
   SECTION:=utils
   CATEGORY:=Utilities
-  DEPENDS:=+libsane +libltdl +libusb-1.0
+  DEPENDS:=+libsane +libltdl +libusb-1.0 +libxml2
 endef
 
 define Package/sane-epkowa/description
