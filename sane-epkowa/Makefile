@@ -39,13 +39,13 @@ endef
 
 define Package/sane-epkowa/install 
 	$(INSTALL_DIR) $(1)/usr/lib/sane/epkowa
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/ipkg-install/usr/lib/sane/*.so $(1)/usr/lib/sane/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/lib/sane/*.so $(1)/usr/lib/sane/
 	$(INSTALL_DIR) $(1)/usr/share/sane/epkowa/device
-	$(CP) $(PKG_BUILD_DIR)/ipkg-install/usr/share/sane/epkowa/device/* $(1)/usr/share/sane/epkowa/device/
-	$(CP) $(PKG_BUILD_DIR)/ipkg-install/usr/share/sane/*.usbid $(1)/usr/share/sane/
+	$(CP) $(PKG_INSTALL_DIR)/usr/share/sane/epkowa/device/* $(1)/usr/share/sane/epkowa/device/
+	$(CP) $(PKG_INSTALL_DIR)/usr/share/sane/*.usbid $(1)/usr/share/sane/
 	$(INSTALL_DIR) $(1)/etc/sane.d/dll.d
-	$(CP) $(PKG_BUILD_DIR)/ipkg-install/usr/etc/sane.d/*.conf $(1)/etc/sane.d/
-	$(CP) $(PKG_BUILD_DIR)/ipkg-install/usr/etc/sane.d/dll.d/* $(1)/etc/sane.d/dll.d/
+	$(CP) $(PKG_INSTALL_DIR)/usr/etc/sane.d/*.conf $(1)/etc/sane.d/
+	$(CP) $(PKG_INSTALL_DIR)/usr/etc/sane.d/dll.d/* $(1)/etc/sane.d/dll.d/
 endef
 
 $(eval $(call BuildPackage,sane-epkowa))

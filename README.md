@@ -23,7 +23,7 @@ make package/sane-epkowa/compile V=s -j <CORES_NUM>
 ### Install
 1) Copy package to temp folder on your router
 ```
-scp bin/packages/<ARCH>/sane-epkowa/sane-epkowa_<VERSION>.ipk root@<YOUR_ROUTER_IP>:/tmp
+scp bin/packages/<ARCH>/epkowa/sane-epkowa_<VERSION>.ipk root@<YOUR_ROUTER_IP>:/tmp
 ```
 2) Login via ssh
 ```
