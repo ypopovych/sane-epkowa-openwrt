@@ -32,15 +32,15 @@ define Package/sane-epkowa/description
    SANE Epson Epkowa backend
 endef
 
-define Package/conffiles
+define Package/sane-epkowa/conffiles
 	/etc/sane.d/epkowa.conf
-ended
+endef
 
 define Package/sane-epkowa/install 
 	$(INSTALL_DIR) $(1)/usr/lib/sane
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/libsane-epkowa.so $(1)/usr/lib/sane/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/libsane-epkowa.so* $(1)/usr/lib/sane/
 	$(INSTALL_DIR) $(1)/etc/sane.d
-	$(INSTALL_BIN) $(SOURCE)/epkowa.conf $(1)/etc/sane.d/
+	$(CP) $(SOURCE)/epkowa.conf $(1)/etc/sane.d/
 endef
 
 $(eval $(call BuildPackage,sane-epkowa))
